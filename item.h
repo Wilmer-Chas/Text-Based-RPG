@@ -1,3 +1,6 @@
+#if !defined(ITEM_H)
+#define ITEM_H 
+
 #include <iostream>
 using namespace std;
 
@@ -20,23 +23,7 @@ public:
     void useItem() {
 
     };
+
 };
 
-class sword : public item
-{
-public:
-    sword()
-        : item("Sword", "My sword", 1) {}
-};
-
-
-
-
-int main()
-{
-    // item mySword("Sword", "My Sword", 1);
-    // mySword.displayInfo();
-
-    sword mySword2;
-    mySword2.displayInfo();
-}
+#endif // item
