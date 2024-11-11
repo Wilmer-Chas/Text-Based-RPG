@@ -16,5 +16,8 @@ void Enemy::displayEnemyInfo()
     std::cout << "Type: " << name << std::endl;  // Enemy class.
     std::cout << "Health: " << hp << std::endl;  // Enemy health.
     std::cout << "Damage: " << damage << std::endl; // Enemy damage output.
-    if(isFlying) std::cout << "Enemy is flying" << std::endl;  // Tells if the enmy is flying or not.
+    if(isFlying) 
+    {
+        std::cout << "Enemy is flying" << std::endl;  // Tells if the enmy is flying or not.
+    }
 }
