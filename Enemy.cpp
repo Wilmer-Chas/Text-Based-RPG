@@ -2,9 +2,9 @@
 #include <string>
 #include <iostream>
 
-int Enemy::takeDamage(int damage)
+void Enemy::takeDamage(int damage)
 {
-    return hp -= damage;
+    hp -= damage;
 }
 int Enemy::dealDamage()
 {

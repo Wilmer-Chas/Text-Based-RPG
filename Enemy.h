@@ -16,7 +16,7 @@ public:
     Enemy(std::string name, int hp, int damage, bool isFlying, int xp)
         : name(name), hp(hp), damage(damage), xp(xp) {}
 
-int takeDamage(int damage);
+void takeDamage(int damage);
 int dealDamage();
 void displayEnemyInfo();
 };
