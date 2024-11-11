@@ -1,39 +1,39 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class item {
-    public:
+class item
+{
+public:
     string name;
     string description;
     int qty;
 
-    // item(string nameIn, string desc, int qtyIn) {
-    //     name = nameIn;
-    //     description = desc;
-    //     qty = qtyIn;
-    // }
+    item(string name, string desc, int qty)
+        : name(name), description(desc), qty(qty) {};
 
-    void displayInfo() {
-        cout << "\nName: " << name << "\n" << description;
+    void displayInfo()
+    {
+        cout << "\nName: " << name << "\n"
+             << description;
     };
 
     void useItem() {
-        
+
     };
 };
 
-class sword : public item {
-    public:
-    string name = "Sword";
-    string description = "my sword";
-    int qty = 1;
-    void displayInfo() {
-        cout << "\nName: " << name << "\n" << description;
-    };
+class sword : public item
+{
+public:
+    sword()
+        : item("Sword", "My sword", 1) {}
 };
 
 
-int main () {
+
+
+int main()
+{
     // item mySword("Sword", "My Sword", 1);
     // mySword.displayInfo();
 
