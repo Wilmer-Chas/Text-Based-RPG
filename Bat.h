@@ -8,7 +8,7 @@ class Bat : public Enemy
 {
 public:
     Bat(std::string name, int hp, int damage, bool isFlying, int xp)
-        : Enemy("Bat", 10, 3, true, 1) {}
+        : Enemy("Bat", 10, 3, true, 1) {} // Standard stats for Bat enemy.
 };
 
 #endif

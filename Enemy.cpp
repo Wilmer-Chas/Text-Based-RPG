@@ -13,8 +13,8 @@ int Enemy::dealDamage()
 void Enemy::displayEnemyInfo()
 {
     std::cout << "-===-Enemy Information-===-" << std::endl;
-    std::cout << "Type: " << name << std::endl;
-    std::cout << "Health: " << hp << std::endl;
-    std::cout << "Damage: " << damage << std::endl;
-    if(isFlying) std::cout << "Enemy is flying" << std::endl;
+    std::cout << "Type: " << name << std::endl;  // Enemy class.
+    std::cout << "Health: " << hp << std::endl;  // Enemy health.
+    std::cout << "Damage: " << damage << std::endl; // Enemy damage output.
+    if(isFlying) std::cout << "Enemy is flying" << std::endl;  // Tells if the enmy is flying or not.
 }
