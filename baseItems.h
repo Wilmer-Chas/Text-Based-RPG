@@ -54,4 +54,17 @@ public:
         return 4 + (rand() % 5);
     };
 };
+
+class potentHealthPotion : public item
+{
+public:
+    potentHealthPotion()
+        : item ("Potent health potion", "A black slurry of herbs, looks like tar and smells like shit", 1) {}
+
+    // returns an int
+    int useItem () {
+        return 8 + (rand() % 9);
+    };
+};
+
 #endif // BASEITEMS_H
