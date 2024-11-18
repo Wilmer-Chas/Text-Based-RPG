@@ -5,10 +5,9 @@
 
 class Player
 {
-private:
+public:
     std::string name;
     std::string playerClass;
-    int damage;
     int strength;
     int dexterity;
     int intelligience;
@@ -16,7 +15,7 @@ private:
     int charisma;
     int defense;
 public: 
-    Player(std::string name, std::string playerClass, int damage, int strength, int dexterity, int intelligience, int levels, int charisma, int defense);
+    Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense);
     // Declares the usage of an item
     void useItem( /*Item */);
     // Display Info about Player
@@ -27,6 +26,8 @@ public:
     int calculateDoDamage(int weaponDamage);
     // contains the formula for how damage taken is calculated
     int calculateTakeDamage(int enemyDamage);
+    // sets the initial attributes depending on player class
+    void setClassAttributes();
 };
 
 #endif
