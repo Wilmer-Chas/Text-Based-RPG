@@ -56,8 +56,9 @@ void BattleSystem::playerTurn(Player& player, Enemy& enemy)
 
 void BattleSystem::enemyTurn(Player& player, Enemy& enemy)
 {
+    if(enemy.getHp() <= 0) return;
     int enemyDamage = enemy.dealDamage();
-    //Generates random number betwen 0-2. If number is 0 enemy miss thir attack. 66% hit chance.
+    //Generates random number betwen 0-2. If number is 0 enemy miss their attack. 66% hit chance.
     srand(time(0));
     int hitOrMiss = rand() % 3;
     if (hitOrMiss == 0)
@@ -77,12 +78,12 @@ void BattleSystem::healthCheck(Player& player, Enemy& enemy)
     if (enemy.getHp() < 0) enemy.setHp(0);
     if (player.hp == 0)
     {
-        std::cout << "You fall to the ground. You feel your soul leaving your body as you draw your last breath.\nYOU ARE DEAD." << std::endl;
+        std::cout << "You fall to the ground. You feel your soul leaving your body as you draw your last breath.\nYOU ARE DEAD.\n" << std::endl;
         player.isAlive = false;
     }
     else if (enemy.getHp() == 0)
     {
-        std::cout << "Your enemy falls to the ground. Congratulations, you won the battle.\nYou live to die another day." << std::endl;
+        std::cout << "Your enemy falls to the ground. Congratulations, you won the battle.\nYou live to die another day.\n" << std::endl;
         enemy.isAlive = false;
     }
 }
@@ -93,7 +94,16 @@ void BattleSystem::battleLoop(Player& player, Enemy& enemy)
         playerTurn(player, enemy);
         enemyTurn(player, enemy);
         healthCheck(player, enemy);
+        pressEnter();
     } while (player.isAlive && enemy. isAlive);
+}
+
+void BattleSystem::pressEnter()
+{
+    std::cout << "Press Enter to continue...";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.get();
+    system("CLS");
 }
 
 int main()
