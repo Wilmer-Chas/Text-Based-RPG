@@ -15,7 +15,6 @@ public:
     // Constructor: Takes a reference to a Player object
     Scenario1(Player &p);
 
-    // Method: Takes a reference to a Player object for scenario interaction
     void playScenario1(Player &player);
 };
 

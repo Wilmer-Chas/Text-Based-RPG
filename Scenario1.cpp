@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Scenario1.h"
-#include "Player.h"  // Include the full definition of Player
+#include "Player.h" 
 
 // Constructor definition
 Scenario1::Scenario1(Player &p) : player(p) 
@@ -17,7 +17,6 @@ void Scenario1::playScenario1(Player &player)
     int choice;
     std::cin >> choice;
 
-    // Use the 'player' parameter to make decisions based on player stats
     switch (choice)
     {
     case 1:
@@ -38,6 +37,5 @@ void Scenario1::playScenario1(Player &player)
     }
 
     // You can use the class member `this->player` if needed
-    std::cout << "Your player's strength: " << this->player.strength << std::endl;  // Accessing class member 'player'
-    std::cout << "Your player's name: " << player.name << std::endl;  // Accessing the function parameter 'player'
+    std::cout << "Your player's strength: " << this->player.strength << std::endl; 
 }
