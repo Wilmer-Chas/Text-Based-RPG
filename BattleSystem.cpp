@@ -108,7 +108,7 @@ void BattleSystem::pressEnter()
     system("CLS");
 }
 
-int main()
+/*int main()
 {
     Player player("Kalle", "Warrior", 18, 10, 2, 5, 13, 2, 100, true);
     Bat bat;
@@ -118,4 +118,4 @@ int main()
     BattleSystem battle;
 
     battle.battleLoop(player, bat, excalibur);
-}
+}*/
