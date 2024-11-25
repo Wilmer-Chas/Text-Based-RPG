@@ -14,8 +14,10 @@ public:
     int charisma;
     int defense;
     int levels;
+    int hp;
+    bool isAlive;
 public: 
-    Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense);
+    Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense, int hp, bool isAlive);
     // Declares the usage of an item //probably redundant
     void useItem( /*Item */);
     // Display Info about Player
@@ -38,10 +40,11 @@ public:
     int getCha () { return charisma; }
     int getDef () { return defense; }
     int getLvl () { return levels; }
+    int getHp  () { return hp; }
 
     //setters
-    std::string setName(std::string input) { name = input; }
-    std::string setClass(std::string input) { playerClass = input; }
+    std::string setName(std::string input) { name = input; return name; }
+    std::string setClass(std::string input) { playerClass = input; return playerClass; }
     void setStr (int input) {strength = input;}
     void setDex (int input) {dexterity = input;}
     void setInt (int input) {intelligience = input;}
