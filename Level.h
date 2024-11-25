@@ -1,5 +1,5 @@
-#ifndef LEVEL_MANAGER_H
-#define LEVEL_MANAGER_H
+#ifndef LEVEL_H
+#define LEVEL_H
 
 #include "Player.h"
 #include <unordered_map>
@@ -14,4 +14,4 @@ public:
     void initializePlayer(const Player& player);
 };
 
-#endif // LEVEL_MANAGER_H
+#endif // LEVEL_H
