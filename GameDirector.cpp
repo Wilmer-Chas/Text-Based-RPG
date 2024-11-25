@@ -1,9 +1,16 @@
 #include <iostream>
 #include <random>
+#include "Player.h"
+#include "Scenario1.h"
+#include "Player.h"
+#include "Scenario1.h"
 
 int main()
 {
-    // game directors purpose is mainly to exist as the one that continues forward the games story through mostly randomizing which scenario to pick
-    // game director exists to call on other functions where it randomizes the scenario to play
-    return 0;
+    Player player("Name", "unknown", 10, 10, 0, 5, 10, 10, 30, true);
+
+    Scenario1 scenario1(player);
+    scenario1.playScenario1(player);
+
+    // wowow it works now i need to question whether this is a good implementation or not;;;
 }

@@ -3,10 +3,10 @@
 #include "Player.h"
 
 
-    Player::Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense) 
-    : name(name), playerClass(playerClass), strength(strength), dexterity(dexterity), intelligience(intelligience), levels(levels), charisma(charisma), defense(defense) 
+    Player::Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense, int hp, bool isAlive) 
+    : name(name), playerClass(playerClass), strength(strength), dexterity(dexterity), intelligience(intelligience), levels(levels), charisma(charisma), defense(defense), hp(hp), isAlive(isAlive) 
     {
-        setClassAttributes();
+       // setClassAttributes();
     }
     // Declares the usage of an item
     void useItem( /*Item */)
@@ -38,6 +38,11 @@
         int hp = strength;
         hp = strength-enemyDamage;
         return hp;
+    }
+
+    int Player::calculateDoDamage(int weaponDamage)
+    {
+        return (strength / 3) + weaponDamage;
     }
 
    void Player::setClassAttributes()
