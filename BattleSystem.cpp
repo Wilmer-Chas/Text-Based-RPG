@@ -1,6 +1,8 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "BattleSystem.h"
+#include "item.h"
+#include "baseItems.h"
 #include <ctime>
 #include <cstdlib>
 #include <string>
@@ -8,9 +10,9 @@
 
 int choice;
 
-void BattleSystem::playerTurn(Player& player, Enemy& enemy)
+void BattleSystem::playerTurn(Player& player, Enemy& enemy, Item& item)
 {
-    int playerDamage = player.calculateDoDamage(0); // Currently using 0 for weapon damage; will replace with actual weapon damage when weapons are implemented.
+    int playerDamage = player.calculateDoDamage(item.getDamage()); // Currently using 0 for weapon damage; will replace with actual weapon damage when weapons are implemented.
 
     do
     {
@@ -87,11 +89,11 @@ void BattleSystem::healthCheck(Player& player, Enemy& enemy)
         enemy.isAlive = false;
     }
 }
-void BattleSystem::battleLoop(Player& player, Enemy& enemy)
+void BattleSystem::battleLoop(Player& player, Enemy& enemy, Item& item)
 {
     do
     {
-        playerTurn(player, enemy);
+        playerTurn(player, enemy, item);
         enemyTurn(player, enemy);
         healthCheck(player, enemy);
         pressEnter();
@@ -111,7 +113,9 @@ int main()
     Player player("Kalle", "Warrior", 18, 10, 2, 5, 13, 2, 100, true);
     Bat bat;
 
+    Sword excalibur;
+
     BattleSystem battle;
 
-    battle.battleLoop(player, bat);
+    battle.battleLoop(player, bat, excalibur);
 }

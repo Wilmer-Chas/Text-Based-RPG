@@ -9,7 +9,7 @@
        // setClassAttributes();
     }
     // Declares the usage of an item
-    void useItem( /*Item */)
+    void Player::useItem( /*Item */)
     {
         // unclear what should be in here or if it even should exist
     }
