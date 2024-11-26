@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Scenario1.h"
 #include "Player.h" 
+#include "Enemy.h"
+#include "BattleSystem.h"
 
 // Constructor definition
 Scenario1::Scenario1(Player &p) : player(p) 
 {
-    std::cout << "Scenario1 created for player: " << player.name << std::endl;
+    // std::cout << "Scenario1 created for player: " << player.name << std::endl;
 }
 
 // Function definition for handling the scenario
@@ -13,7 +15,8 @@ void Scenario1::playScenario1(Player &player)
 {
     std::cout << "You have been attacked by goblins!" << std::endl;
     std::cout << "How will you respond to this? 1. Scare the goblins away. 2. Fight. 3. Talk with the goblins. 4. Run away" << std::endl;
-
+    BattleSystem battlesystem;
+    Goblin goblin1;
     int choice;
     std::cin >> choice;
 
@@ -24,12 +27,20 @@ void Scenario1::playScenario1(Player &player)
         break;
     case 2:
         std::cout << "You fight the goblins!" << std::endl;
+        battlesystem.battleLoop(player, goblin1);
         break;
     case 3:
         std::cout << "You try to talk with the goblins." << std::endl;
         break;
     case 4:
-        std::cout << "You run away!" << std::endl;
+        if(player.dexterity > 15)
+        {
+            std::cout << "You run away!" << std::endl;
+        } else
+        {
+            std::cout << "You failed to run away" << std::endl;
+            battlesystem.battleLoop(player, goblin1);
+        }
         break;
     default:
         std::cout << "Invalid input. Please reenter." << std::endl;

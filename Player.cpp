@@ -1,17 +1,13 @@
 #include <iostream>
 #include <string>
 #include "Player.h"
+#include <memory>
 
 
-    Player::Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense) 
-    : name(name), playerClass(playerClass), strength(strength), dexterity(dexterity), intelligience(intelligience), levels(levels), charisma(charisma), defense(defense) 
+    Player::Player(std::string name, std::string playerClass, int strength, int dexterity, int intelligience, int levels, int charisma, int defense, int hp, bool isAlive) 
+    : name(name), playerClass(playerClass), strength(strength), dexterity(dexterity), intelligience(intelligience), levels(levels), charisma(charisma), defense(defense), hp(hp), isAlive(isAlive) 
     {
-        setClassAttributes();
-    }
-    // Declares the usage of an item
-    void useItem( /*Item */)
-    {
-        // unclear what should be in here or if it even should exist
+       // setClassAttributes();
     }
     // Display Info about Player
     void Player::displayInfoPlayer()
@@ -40,6 +36,11 @@
         return hp;
     }
 
+    int Player::calculateDoDamage(int weaponDamage)
+    {
+        return (strength / 3) + weaponDamage;
+    }
+
    void Player::setClassAttributes()
    {
         if (playerClass == "Mage")
@@ -64,3 +65,15 @@
         charisma = 8;
         }
    }
+        void Player::chooseWeapon(int choice) {
+        if (choice == 1) {
+            weapon = std::make_unique<Sword>();
+        } else if (choice == 2) {
+            weapon = std::make_unique<Bow>();
+        } else if (choice == 3) {
+            weapon = std::make_unique<Fireball>();
+        } else {
+            weapon = nullptr;
+            std::cout << "Invalid choice!" << std::endl;
+        }
+    }
